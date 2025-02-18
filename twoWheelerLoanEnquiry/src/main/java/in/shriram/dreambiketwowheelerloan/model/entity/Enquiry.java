@@ -1,17 +1,14 @@
 package in.shriram.dreambiketwowheelerloan.model.entity;
 
-import org.hibernate.annotations.Cascade;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
 import lombok.Data;
 
 @Entity
 @Data
-public class Enqiry {
+public class Enquiry {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,7 +24,5 @@ public class Enqiry {
 	private String pancardNo;
 	private String adharcardNo;
 	
-	OneToOne(Cascade=CascadeType.All)
-	private Cibil cibilScore;
 	
 }
