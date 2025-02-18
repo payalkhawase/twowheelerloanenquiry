@@ -19,4 +19,10 @@ public class EnquiryServiceImpl implements EnquiryService{
 		Enquiry en=er.save(e);
 		return en;
 	}
+
+	@Override
+	public Enquiry getAllEnquiry() {
+		
+		return (Enquiry) er.findAll();
+	}
 }
