@@ -1,9 +1,11 @@
 package in.shriram.dreambiketwowheelerloan.model.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import lombok.Data;
 
 @Entity
@@ -24,5 +26,7 @@ public class Enquiry {
 	private String pancardNo;
 	private String adharcardNo;
 	
+	@OneToOne(cascade = CascadeType.ALL)
+	private Cibil cb;
 	
 }
