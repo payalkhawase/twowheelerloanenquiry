@@ -11,5 +11,7 @@ public interface EnquiryService {
 
 	public List<Enquiry> getAllEnquiry();
 
+	public Enquiry delete(int customerId);
+
 	
 }
