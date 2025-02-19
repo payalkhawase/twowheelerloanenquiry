@@ -52,6 +52,8 @@ public class EnquiryController {
 		return new ResponseEntity<Enquiry>(er,HttpStatus.OK);
 	}
 	
+	
+	
 	@DeleteMapping("/delete/{customerId}")
 	public ResponseEntity<Enquiry> delete(@PathVariable("customerId") int customerId){
 		Enquiry er=	es.delete(customerId);
