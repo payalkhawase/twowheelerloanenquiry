@@ -29,10 +29,4 @@ public class EnquiryController {
 		
 	}
 	
-	@GetMapping("/enquiry")
-	public ResponseEntity<Enquiry> getAllEnquiry(){
-		
-		Enquiry eq = (Enquiry) es.getAllEnquiry();
-		return new ResponseEntity<Enquiry>(eq, HttpStatus.OK);
-	}
 }
