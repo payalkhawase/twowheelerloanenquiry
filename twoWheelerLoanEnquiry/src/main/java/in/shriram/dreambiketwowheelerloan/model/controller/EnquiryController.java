@@ -35,13 +35,15 @@ public class EnquiryController {
 	public ResponseEntity<List<Enquiry>> getAllEnquiry(){
 		
 		List<Enquiry> eq = es.getAllEnquiry();
+		
 		return new ResponseEntity<List<Enquiry>>(eq, HttpStatus.OK);
 	}
 	
 	@GetMapping("enquiry/{customerId}")
 	public ResponseEntity<Enquiry> getEnquirySingle(@PathVariable("customerId") int customerId) {
+		
 		Enquiry eo = es.getEnquiry(customerId);
+		
 		return new ResponseEntity<Enquiry>(eo, HttpStatus.OK);
 	}
-
 }
