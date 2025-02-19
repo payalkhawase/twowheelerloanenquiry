@@ -16,6 +16,6 @@ public class EnquiryServiceImpl implements EnquiryService{
 	@Override
 	public Enquiry getEnquiry(int customerId) {
 		// TODO Auto-generated method stub
-		return er.findByCustomerId(customerId);
+		return er.findById(customerId).get();
 	}
 }

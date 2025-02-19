@@ -9,7 +9,6 @@ import in.shriram.dreambiketwowheelerloan.model.model.Enquiry;
 @Repository
 public interface EnquiryRepo extends JpaRepository<Enquiry, Integer>{
 
-	@Query("FROM Enquiry WHERE customerId = ?1")
-	public Enquiry findByCustomerId(int customerId);
+	
 
 }
