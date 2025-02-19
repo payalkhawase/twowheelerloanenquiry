@@ -14,7 +14,11 @@ public class EnquiryServiceImpl implements EnquiryService{
 	EnquiryRepo er;
 
 	@Override
-	public Enquiry setAllData(Enquiry e) {
+	public Enquiry getEnquiry(int customerId) {
+		// TODO Auto-generated method stub
+		return er.findById(customerId).get();
+  }
+    public Enquiry setAllData(Enquiry e) {
 	
 		Enquiry en=er.save(e);
 		return en;
@@ -24,5 +28,6 @@ public class EnquiryServiceImpl implements EnquiryService{
 	public Enquiry getAllEnquiry() {
 		
 		return (Enquiry) er.findAll();
+
 	}
 }

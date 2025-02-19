@@ -13,7 +13,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class Cibil {
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int cibilId;
