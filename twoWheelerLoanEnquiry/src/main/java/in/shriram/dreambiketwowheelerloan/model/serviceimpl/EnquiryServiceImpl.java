@@ -1,5 +1,7 @@
 package in.shriram.dreambiketwowheelerloan.model.serviceimpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +17,31 @@ public class EnquiryServiceImpl implements EnquiryService{
 
 	@Override
 	public Enquiry getEnquiry(int customerId) {
-		// TODO Auto-generated method stub
+		
 		return er.findById(customerId).get();
+  }
+    public Enquiry setAllData(Enquiry e) {
+	
+		Enquiry en=er.save(e);
+		return en;
 	}
+	@Override
+	public List<Enquiry> getAllEnquiry() {
+		
+		return er.findAll();
+	}
+	
+	@Override
+	public Enquiry delete(int customerId) {
+		er.deleteById(customerId);
+		return null;
+		
+	}
+	@Override
+	public Enquiry updateEnquiry(Enquiry e) {
+		return er.save(e);
+	}
+	
+
+	
 }
