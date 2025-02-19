@@ -23,7 +23,7 @@ public class Cibil {
 	private Date cibilscoredDateTime;
 	@NotBlank
 	@NotNull
-	private enum status{Excellent,VeryGood,Good};
+	private String status;
 	@NotBlank
 	@NotEmpty
 	private String cibilRemark;
