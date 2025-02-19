@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -43,6 +44,17 @@ public class EnquiryController {
 		Enquiry eo = es.getEnquiry(customerId);
 		return new ResponseEntity<Enquiry>(eo, HttpStatus.OK);
 	}
+	
+	@PutMapping("/update")
+	public ResponseEntity<Enquiry> updateEnquirySingle(@RequestBody Enquiry e)
+	
+	{
+		Enquiry er=es.updateEnquiry(e);
+		return new ResponseEntity<Enquiry>(er,HttpStatus.OK);
+		
+		
+	}
+	
 	
 	
 	@DeleteMapping("/delete/{customerId}")
