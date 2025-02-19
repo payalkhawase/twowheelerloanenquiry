@@ -50,7 +50,6 @@ public class EnquiryController {
 		
 		return new ResponseEntity<Enquiry>(er, HttpStatus.ACCEPTED);
 		
-		
 	}
 	
 }
