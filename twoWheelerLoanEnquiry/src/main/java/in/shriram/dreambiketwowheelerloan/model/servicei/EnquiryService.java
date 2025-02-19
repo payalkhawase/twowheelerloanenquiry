@@ -9,5 +9,7 @@ public interface EnquiryService {
 
 	public Enquiry setAllData(Enquiry e);
 
-	public Enquiry getAllEnquiry();
+	public List<Enquiry> getAllEnquiry();
+
+	
 }

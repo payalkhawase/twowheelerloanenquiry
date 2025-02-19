@@ -31,10 +31,10 @@ public class EnquiryController {
 	}
 	
 	@GetMapping("/enquiry")
-	public ResponseEntity<Enquiry> getAllEnquiry(){
+	public ResponseEntity<List<Enquiry>> getAllEnquiry(){
 		
-		Enquiry eq = (Enquiry) es.getAllEnquiry();
-		return new ResponseEntity<Enquiry>(eq, HttpStatus.OK);
+		List<Enquiry> eq = es.getAllEnquiry();
+		return new ResponseEntity<List<Enquiry>>(eq, HttpStatus.OK);
 	}
 	
 	@GetMapping("enquiry/{customerId}")
