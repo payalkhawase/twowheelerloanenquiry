@@ -49,6 +49,7 @@ public class EnquiryController {
 	public ResponseEntity<Enquiry> delete(@PathVariable("customerId") int customerId){
 		Enquiry er=	es.delete(customerId);
 		
+		
 		return new ResponseEntity<Enquiry>(er, HttpStatus.ACCEPTED);
 		
 	}
