@@ -37,6 +37,11 @@ public class EnquiryServiceImpl implements EnquiryService{
 		return null;
 		
 	}
+	@Override
+	public Enquiry updateEnquiry(Enquiry e) {
+		return er.save(e);
+	}
+	
 
 	
 }

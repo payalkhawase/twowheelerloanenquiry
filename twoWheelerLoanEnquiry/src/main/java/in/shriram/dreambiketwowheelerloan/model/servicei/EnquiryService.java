@@ -13,5 +13,7 @@ public interface EnquiryService {
 
 	public Enquiry delete(int customerId);
 
+	public Enquiry updateEnquiry(Enquiry e);
+
 	
 }
