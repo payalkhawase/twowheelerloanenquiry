@@ -17,5 +17,17 @@ public class EnquiryServiceImpl implements EnquiryService{
 	public Enquiry getEnquiry(int customerId) {
 		// TODO Auto-generated method stub
 		return er.findById(customerId).get();
+  }
+    public Enquiry setAllData(Enquiry e) {
+	
+		Enquiry en=er.save(e);
+		return en;
+	}
+
+	@Override
+	public Enquiry getAllEnquiry() {
+		
+		return (Enquiry) er.findAll();
+
 	}
 }
