@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,4 +30,18 @@ public class EnquiryController {
 		
 	}
 	
+
+	@GetMapping("/enquiry")
+	public ResponseEntity<List<Enquiry>> getAllEnquiry(){
+		
+		List<Enquiry> eq = es.getAllEnquiry();
+		return new ResponseEntity<List<Enquiry>>(eq, HttpStatus.OK);
+	}
+	
+	@GetMapping("enquiry/{customerId}")
+	public ResponseEntity<Enquiry> getEnquirySingle(@PathVariable("customerId") int customerId) {
+		Enquiry eo = es.getEnquiry(customerId);
+		return new ResponseEntity<Enquiry>(eo, HttpStatus.OK);
+	}
+
 }
