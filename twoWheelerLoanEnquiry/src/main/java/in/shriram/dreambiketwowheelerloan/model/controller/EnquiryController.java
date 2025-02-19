@@ -44,7 +44,6 @@ public class EnquiryController {
 		Enquiry eo = es.getEnquiry(customerId);
 		return new ResponseEntity<Enquiry>(eo, HttpStatus.OK);
 	}
-	
 	@PutMapping("/update")
 	public ResponseEntity<Enquiry> updateEnquirySingle(@RequestBody Enquiry e)
 	
