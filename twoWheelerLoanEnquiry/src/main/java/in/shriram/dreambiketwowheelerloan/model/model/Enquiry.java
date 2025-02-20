@@ -19,7 +19,7 @@ import lombok.Data;
 @Data
 public class Enquiry {
 
-	@Id
+    @Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int customerId;
 	@NotBlank(message = "First name can not be blank")
