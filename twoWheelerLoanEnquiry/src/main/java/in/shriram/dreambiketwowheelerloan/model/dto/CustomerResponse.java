@@ -2,7 +2,7 @@ package in.shriram.dreambiketwowheelerloan.model.dto;
 
 import java.util.Date;
 
-public class UserResponse {
+public class CustomerResponse {
 
 	private String msg;
 	private Date timestamp;
@@ -19,12 +19,12 @@ public class UserResponse {
 		this.timestamp = timestamp;
 	}
 	
-	public UserResponse(String msg, Date timestamp) {
+	public CustomerResponse(String msg, Date timestamp) {
 		super();
 		this.msg = msg;
 		this.timestamp = timestamp;
 	}
-	public UserResponse() {
+	public CustomerResponse() {
 		
 		super();
 		
