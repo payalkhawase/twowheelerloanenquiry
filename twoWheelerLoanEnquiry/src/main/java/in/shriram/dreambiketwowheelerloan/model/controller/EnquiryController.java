@@ -16,13 +16,22 @@ import org.springframework.web.bind.annotation.RestController;
 
 import in.shriram.dreambiketwowheelerloan.model.model.Enquiry;
 import in.shriram.dreambiketwowheelerloan.model.servicei.EnquiryService;
+import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/enq")
+@Slf4j
 public class EnquiryController {
 
 	@Autowired
-	EnquiryService es;
+	EnquiryService es;	
+	
+	@GetMapping("/getLog")
+	public void getLog() {
+		
+		log.error("THIS IS ERROR LOG");
+	}
 	
 	@PostMapping("/add")
 	public ResponseEntity<Enquiry> setAllData(@RequestBody Enquiry e){
@@ -35,6 +44,8 @@ public class EnquiryController {
 	
 	@GetMapping("/enquiry")
 	public ResponseEntity<List<Enquiry>> getAllEnquiry(){
+		
+		//log.info("this is info log");
 		
 		List<Enquiry> eq = es.getAllEnquiry();
 		return new ResponseEntity<List<Enquiry>>(eq, HttpStatus.OK);
