@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import in.shriram.dreambiketwowheelerloan.model.model.Enquiry;
 import in.shriram.dreambiketwowheelerloan.model.servicei.EnquiryService;
-import lombok.extern.java.Log;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
