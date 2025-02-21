@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import in.shriram.dreambiketwowheelerloan.model.model.Cibil;
 import in.shriram.dreambiketwowheelerloan.model.model.Enquiry;
 import in.shriram.dreambiketwowheelerloan.model.servicei.EnquiryService;
 import lombok.extern.slf4j.Slf4j;
@@ -78,4 +79,13 @@ public class EnquiryController {
 		
 	}
 	
+	@GetMapping("/rejectedEnquiry/{status}")
+	public ResponseEntity<List<Cibil>> showrejectedEnquiry(@PathVariable("status") String status) {
+		
+		List<Cibil> cb = es.ShowRejectedEnquiry(status);
+		
+		return new ResponseEntity<List<Cibil>>(cb, HttpStatus.OK);
+	
+    }
 }
+	

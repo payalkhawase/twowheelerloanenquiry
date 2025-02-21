@@ -1,6 +1,8 @@
 package in.shriram.dreambiketwowheelerloan.model.servicei;
 
 import java.util.List;
+
+import in.shriram.dreambiketwowheelerloan.model.model.Cibil;
 import in.shriram.dreambiketwowheelerloan.model.model.Enquiry;
 
 public interface EnquiryService {
@@ -14,6 +16,10 @@ public interface EnquiryService {
 	public Enquiry delete(int customerId);
 
 	public Enquiry updateEnquiry(Enquiry e);
+
+	public List<Cibil> ShowRejectedEnquiry(String status);
+
+	
 
 	
 }
