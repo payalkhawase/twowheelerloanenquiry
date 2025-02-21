@@ -24,6 +24,7 @@ public interface EnquiryService {
 	public Enquiry getEnquiryByCibil(int cbCibilId);
 
 
+
 	
 
 	

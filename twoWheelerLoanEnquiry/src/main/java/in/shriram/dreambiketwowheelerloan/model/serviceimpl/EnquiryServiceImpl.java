@@ -128,13 +128,7 @@ public class EnquiryServiceImpl implements EnquiryService {
 	@Override
 	public Enquiry getEnquiryByCibil(int cbCibilId) {
 		
-		Enquiry e=er.findById(cbCibilId).get();
-		
-		return e;
-	}
-
-
-
-	
+		return er.findByCbCibilId(cbCibilId);
+	}	
 
 }
