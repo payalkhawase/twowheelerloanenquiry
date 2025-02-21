@@ -8,15 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotEmpty;
-/*import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
-*/
+
 @Entity
 public class Cibil {
 	
@@ -24,21 +16,9 @@ public class Cibil {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int cibilId;
-	
-	//@Min(value=300,message = "Cibil score greater than 300")
-	//@Max(value=900,message = "Cibil score less than 900")
 	private int cibilScore;
-
-	//@NotEmpty(message = "Date should not empty")
 	private Date cibilscoredDateTime = new Date();
-	
-	//@NotBlank(message = "Status should not be blank")
-	@NotEmpty(message = "Status should not be empty")
 	private String status;
-	//{Excellent,VeryGood,Good};
-	//@NotBlank(message = "Cibil remark should not be blank")
-	//@NotEmpty(message = "Cibil remark should not be empty")
-	//@NotNull(message = "Cibil remark should not be null")
 	private String cibilRemark;
 	
 	
