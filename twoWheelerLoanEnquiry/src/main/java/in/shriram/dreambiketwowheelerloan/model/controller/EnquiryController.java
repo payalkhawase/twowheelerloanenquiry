@@ -17,13 +17,22 @@ import org.springframework.web.bind.annotation.RestController;
 import in.shriram.dreambiketwowheelerloan.model.model.Cibil;
 import in.shriram.dreambiketwowheelerloan.model.model.Enquiry;
 import in.shriram.dreambiketwowheelerloan.model.servicei.EnquiryService;
+import jakarta.ws.rs.core.Response;
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/enq")
+@Slf4j
 public class EnquiryController {
 
 	@Autowired
-	EnquiryService es;
+	EnquiryService es;	
+	
+	@GetMapping("/getLog")
+	public void getLog() {
+		
+		log.error("THIS IS ERROR LOG");
+	}
 	
 	@PostMapping("/add")
 	public ResponseEntity<Enquiry> setAllData(@RequestBody Enquiry e){
@@ -36,6 +45,8 @@ public class EnquiryController {
 
 	@GetMapping("/enquiry")
 	public ResponseEntity<List<Enquiry>> getAllEnquiry(){
+		
+		//log.info("this is info log");
 		
 		List<Enquiry> eq = es.getAllEnquiry();
 		
@@ -77,5 +88,26 @@ public class EnquiryController {
 		return new ResponseEntity<List<Cibil>>(cb, HttpStatus.OK);
 	
     }
+	
+	@PutMapping("updateEnquiryStatus/{customerId}/{status}")
+	public ResponseEntity<Enquiry> updateEnquiryStatus(@PathVariable("customerId") int customerId,@PathVariable("status") String status){
+		
+		Enquiry er=es.updateEnquiryStatus(customerId,status);
+		
+		return new ResponseEntity<Enquiry>(er,HttpStatus.OK);
+	}
+	
+	@GetMapping("enquiryByCibil/{cbCibilId}")
+	public ResponseEntity<Enquiry> getEnquiryByCibil(@PathVariable("cbCibilId") int cbCibilId) {
+		
+		Enquiry eo = es.getEnquiryByCibil(cbCibilId);
+		
+		return new ResponseEntity<Enquiry>(eo, HttpStatus.OK);
+	}
+	
+
+	
+	
+	
 }
 	

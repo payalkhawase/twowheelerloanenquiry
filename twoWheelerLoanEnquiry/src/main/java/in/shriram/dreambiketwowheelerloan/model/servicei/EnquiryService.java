@@ -19,6 +19,12 @@ public interface EnquiryService {
 
 	public List<Cibil> ShowRejectedEnquiry(String status);
 
+	public Enquiry updateEnquiryStatus(int customerId, String status);
+
+	public Enquiry getEnquiryByCibil(int cbCibilId);
+
+
+
 	
 
 	
