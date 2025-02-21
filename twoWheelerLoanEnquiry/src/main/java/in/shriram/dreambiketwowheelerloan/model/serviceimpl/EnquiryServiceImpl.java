@@ -93,4 +93,16 @@ public class EnquiryServiceImpl implements EnquiryService {
 		return er.save(e);
 	}
 
+	@Override
+	public List<Cibil> ShowRejectedEnquiry(String status) {
+		
+		Cibil c = new Cibil();
+		
+		c.setStatus(c.getStatus());
+		
+		return  cr.findByStatus(status);
+	}
+
+	
+
 }

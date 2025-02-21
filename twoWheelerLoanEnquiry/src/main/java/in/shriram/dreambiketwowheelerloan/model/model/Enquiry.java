@@ -34,7 +34,7 @@ public class Enquiry {
 	private long alternateMobno;
 	private String pancardNo;
 	private String adharcardNo;
-	private String enquiryStatus;
+	private String enquiryStatus="Pending";
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	private Cibil cb;
