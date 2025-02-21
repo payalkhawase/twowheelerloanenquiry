@@ -103,6 +103,38 @@ public class EnquiryServiceImpl implements EnquiryService {
 		return  cr.findByStatus(status);
 	}
 
+	@Override
+	public Enquiry updateEnquiryStatus(int customerId, String status) {
+
+		Enquiry e=new Enquiry();
+		e=er.findById(customerId).get();
+		
+		e.setCustomerId(customerId);
+		e.setFirstname(e.getFirstname());
+		e.setLastName(e.getLastName());
+		e.setAddress(e.getAddress());
+		e.setCity(e.getCity());
+		e.setAge(e.getAge());
+		e.setEmail(e.getEmail());
+		e.setMobileNo(e.getMobileNo());
+		e.setAlternateMobno(e.getAlternateMobno());
+		e.setPancardNo(e.getPancardNo());
+		e.setAdharcardNo(e.getAdharcardNo());
+		e.setEnquiryStatus(status);
+		
+		return er.save(e);
+	}
+
+	@Override
+	public Enquiry getEnquiryByCibil(int cbCibilId) {
+		
+		Enquiry e=er.findById(cbCibilId).get();
+		
+		return e;
+	}
+
+
+
 	
 
 }

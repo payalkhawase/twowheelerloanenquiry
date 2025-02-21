@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import in.shriram.dreambiketwowheelerloan.model.model.Cibil;
 import in.shriram.dreambiketwowheelerloan.model.model.Enquiry;
 import in.shriram.dreambiketwowheelerloan.model.servicei.EnquiryService;
+import jakarta.ws.rs.core.Response;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
@@ -87,5 +88,26 @@ public class EnquiryController {
 		return new ResponseEntity<List<Cibil>>(cb, HttpStatus.OK);
 	
     }
+	
+	@PutMapping("updateEnquiryStatus/{customerId}/{status}")
+	public ResponseEntity<Enquiry> updateEnquiryStatus(@PathVariable("customerId") int customerId,@PathVariable("status") String status){
+		
+		Enquiry er=es.updateEnquiryStatus(customerId,status);
+		
+		return new ResponseEntity<Enquiry>(er,HttpStatus.OK);
+	}
+	
+	@GetMapping("enquiryByCibil/{cbCibilId}")
+	public ResponseEntity<Enquiry> getEnquiryByCibil(@PathVariable("cbCibilId") int cbCibilId) {
+		
+		Enquiry eo = es.getEnquiryByCibil(cbCibilId);
+		
+		return new ResponseEntity<Enquiry>(eo, HttpStatus.OK);
+	}
+	
+
+	
+	
+	
 }
 	
