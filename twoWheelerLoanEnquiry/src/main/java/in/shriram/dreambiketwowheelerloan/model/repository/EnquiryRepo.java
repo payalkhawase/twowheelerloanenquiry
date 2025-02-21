@@ -10,6 +10,8 @@ import in.shriram.dreambiketwowheelerloan.model.model.Enquiry;
 @Repository
 public interface EnquiryRepo extends JpaRepository<Enquiry, Integer>{
 
+	public Enquiry findByCbCibilId(int cbCibilId);
+
 	
 
 	
